@@ -97,14 +97,13 @@
             flex: 1 1 300px;
         }
 
-        /* Estilo de las imágenes clicables */
         img {
             max-width: 100%;
             height: auto;
             border: 1px solid #ddd;
             border-radius: 4px;
             transition: transform 0.3s ease;
-            cursor: zoom-in; /* Indica que se puede ampliar */
+            cursor: zoom-in;
         }
 
         img:hover {
@@ -112,7 +111,6 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
-        /* --- ESTILOS PARA EL ZOOM (MODAL) --- */
         #modal-zoom {
             display: none;
             position: fixed;
@@ -132,7 +130,7 @@
             max-height: 90%;
             border: 3px solid white;
             cursor: zoom-out;
-            transform: none; /* Evita el hover en el zoom */
+            transform: none;
         }
 
         .alert-box {
@@ -337,9 +335,16 @@
             <div class="image-container"><img src="Paso 22.png" alt="Paso 22"></div>
         </div>
 
-        <p>En Observaciones registre obligatoriamente el formato:</p>
-        <div class="data-entry">[Número de Parte] - [Número de Pedido PON]</div>
-        <div class="image-container"><img src="Paso 23.png" alt="Paso 23"></div>
+        <h3>Gestión de Observaciones y Disponibilidad</h3>
+        <p>Primero, haga clic en el <strong>triángulo azul</strong> al lado del espacio de observaciones. Allí podrá seleccionar entre las plantillas predeterminadas según los días que demore el despacho del repuesto.</p>
+        <div class="image-container"><img src="Paso 30.png" alt="Plantilla Disponibilidad"></div>
+
+        <p>En el cuadro de texto de observaciones, registre el identificador siguiendo estas reglas:</p>
+        <ul>
+            <li><strong>Si es más de un repuesto:</strong> Use obligatoriamente el formato <b>[Número de Parte] - [Número de Pedido PON]</b>.</li>
+            <li><strong>Si es un solo repuesto:</strong> Escriba únicamente el número de pedido <b>PON</b> en el espacio correspondiente.</li>
+        </ul>
+        <div class="image-container"><img src="Paso 29.png" alt="Registro de PON"></div>
 
         <p>Haga clic en el botón <strong>Item</strong> y cargue el repuesto con la lupa.</p>
         <div class="image-group">
