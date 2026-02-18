@@ -57,6 +57,13 @@
             font-size: 1.4rem;
         }
 
+        h3 {
+            color: var(--negro);
+            border-left: 4px solid var(--vinotinto);
+            padding-left: 10px;
+            margin-top: 1.5rem;
+        }
+
         .step-number {
             background: var(--negro);
             color: var(--blanco);
@@ -146,18 +153,6 @@
             border-left: 5px solid #0056b3;
             padding: 1rem;
             margin: 1rem 0;
-        }
-
-        .data-entry {
-            background-color: #212121;
-            color: #00ff00;
-            padding: 12px;
-            border-radius: 4px;
-            font-family: 'Courier New', Courier, monospace;
-            display: block;
-            margin: 10px 0;
-            text-align: center;
-            font-size: 1.1rem;
         }
 
         table {
@@ -326,26 +321,55 @@
 
     <div class="step-card">
         <h2><span class="step-number">5</span>Registro Final en SAMM</h2>
-        <p>Busque la orden en el sistema SAMM para finalizar el proceso:</p>
-        <div class="image-container"><img src="Paso 20.png" alt="Paso 20"></div>
+        
+        <div class="info-box">
+            <strong>Seleccione su flujo de trabajo:</strong> Dependiendo de si es una Visita Técnica o una Venta Directa, el inicio del registro varía.
+        </div>
 
-        <p>Cambie el estado de "Cotización enviada" a <strong>"Pendiente por solicitar repuestos"</strong> y haga clic en <strong>Requisición</strong>.</p>
+        <h3>Sub-paso A: Si es una Visita Técnica (OTT)</h3>
+        <p>Busque la orden en el sistema SAMM:</p>
+        <div class="image-container"><img src="Paso 20.png" alt="Paso 20"></div>
+        <p>Cambie el estado a <strong>"Pendiente por solicitar repuestos"</strong> y haga clic en <strong>Requisición</strong>.</p>
         <div class="image-group">
             <div class="image-container"><img src="Paso 21.png" alt="Paso 21"></div>
             <div class="image-container"><img src="Paso 22.png" alt="Paso 22"></div>
         </div>
 
-        <h3>Gestión de Observaciones y Disponibilidad</h3>
-        <p>Primero, haga clic en el <strong>triángulo azul</strong> al lado del espacio de observaciones. Allí podrá seleccionar entre las plantillas predeterminadas según los días que demore el despacho del repuesto.</p>
+        <h3>Sub-paso B: Si es una Venta Directa (Nuevo Registro)</h3>
+        <p>1. Abrimos SAMM y nos dirigimos al módulo correspondiente.</p>
+        <div class="image-container"><img src="ss 1.png" alt="ss 1"></div>
+        
+        <p>2. Vamos al botón de <b>lupa</b> en el recuadro de requisiciones.</p>
+        <div class="image-container"><img src="ss 2.png" alt="ss 2"></div>
+        
+        <p>3. Hacemos clic en el botón <b>Nuevo</b>.</p>
+        <div class="image-container"><img src="ss 3.png" alt="ss 3"></div>
+        
+        <p>4. Se abrirá el formulario de creación.</p>
+        <div class="image-container"><img src="ss 4.png" alt="ss 4"></div>
+        
+        <p>5. Nos dirigimos al espacio de selección y elegimos la opción <b>Requisición de Venta</b>.</p>
+        <div class="image-container"><img src="ss 5.png" alt="ss 5"></div>
+        
+        <p>6. Diligenciamos los datos del cliente (como si fuera una orden de servicio normal) y procedemos con el registro de los repuestos.</p>
+
+        <hr style="margin: 2rem 0; border: 0; border-top: 1px solid #eee;">
+
+        <h3>Continuación del Registro (Ambos casos)</h3>
+        <p>Una vez dentro de la requisición (ya sea desde OTT o Venta), proceda con los siguientes pasos:</p>
+        
+        <h4>1. Gestión de Observaciones y Disponibilidad</h4>
+        <p>Haga clic en el <strong>triángulo azul</strong> al lado del espacio de observaciones para seleccionar la plantilla de tiempo de despacho.</p>
         <div class="image-container"><img src="Paso 30.png" alt="Plantilla Disponibilidad"></div>
 
-        <p>En el cuadro de texto de observaciones, registre el identificador siguiendo estas reglas:</p>
+        <p>En el cuadro de observaciones, registre el identificador:</p>
         <ul>
-            <li><strong>Si es más de un repuesto:</strong> Use obligatoriamente el formato <b>[Número de Parte] - [Número de Pedido PON]</b>.</li>
-            <li><strong>Si es un solo repuesto:</strong> Escriba únicamente el número de pedido <b>PON</b> en el espacio correspondiente.</li>
+            <li><strong>Múltiples repuestos:</strong> [Número de Parte] - [Número de Pedido PON].</li>
+            <li><strong>Un solo repuesto:</strong> Escriba únicamente el número de pedido <b>PON</b>.</li>
         </ul>
         <div class="image-container"><img src="Paso 29.png" alt="Registro de PON"></div>
 
+        <h4>2. Carga de Repuestos (Items)</h4>
         <p>Haga clic en el botón <strong>Item</strong> y cargue el repuesto con la lupa.</p>
         <div class="image-group">
             <div class="image-container"><img src="Paso 24.png" alt="Paso 24"></div>
@@ -357,7 +381,8 @@
             <div class="image-container"><img src="Paso 26.png" alt="Paso 26"></div>
             <div class="image-container"><img src="Paso 27.png" alt="Paso 27"></div>
         </div>
-        <p style="text-align: center; font-weight: bold; color: var(--verde-exito);">
+
+        <p style="text-align: center; font-weight: bold; color: var(--verde-exito); border: 2px solid var(--verde-exito); padding: 10px; border-radius: 5px;">
             FINALICE CAMBIANDO EL ESTADO A: "Repuestos han sido solicitados"
         </p>
     </div>
@@ -370,7 +395,6 @@
 </footer>
 
 <script>
-    // Lógica para el zoom de imágenes
     const modal = document.getElementById('modal-zoom');
     const imgAmpliada = document.getElementById('img-ampliada');
     const imagenes = document.querySelectorAll('img:not(#img-ampliada)');
@@ -385,6 +409,3 @@
 
 </body>
 </html>
-
-
-
